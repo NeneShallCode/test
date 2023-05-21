@@ -20,15 +20,16 @@ let weather = {
     humidity: 20
   }
 };
-let city = prompt("Enter a city ");
-if (weather[city]) {
-  alert(
-    `It is currently ${Math.round(
-      weather[city].temp
-    )}°C in ${city} with a humidity of ${weather[city].humidity}%.`
-  );
-} else {
-  alert(
-    `Sorry, we don't know the weather for this city, try https://www.google.com/search?q=weather+${city}`
-  );
+function search(event){
+  event.preventDefault();
+  let searchInput = document.querySelector ("#searchCity")
+  function showPassword(event) {
+  event.preventDefault();
+  let passwordInput = document.querySelector("#password-input");
+  alert(`Your password is ${passwordInput.value}`);
 }
+let passwordForm = document.querySelector("#password-form");
+passwordForm.addEventListener("submit", showPassword);
+}
+let form = document.querySelector ("#searchEngine")
+form.addEventListener("submit", search)
